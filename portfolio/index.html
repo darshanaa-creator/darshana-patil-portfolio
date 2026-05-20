@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darshana Patil — Marketing & Content Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+
+<!--
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  HOW TO EDIT THIS PORTFOLIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  CHANGING TEXT
+  ─────────────
+  Open this file in VS Code (or any text editor).
+  Use Ctrl+F (Find) to search for the text you want to change.
+  Edit it, save, done.
+
+  ADDING / SWAPPING A CREATIVE IMAGE
+  ───────────────────────────────────
+  1. Save your new image into the  assets/  folder next to this file.
+     Use a simple filename, no spaces: e.g.  ads-new-client.jpg
+     Recommended size: under 300KB, JPG or PNG, landscape or square.
+
+  2. Find the GALLERY DATA section below (search: GALLERY DATA).
+     Copy one of the existing gallery entry blocks and paste it.
+     Fill in:
+       src:         "assets/your-new-filename.jpg"
+       cat:         one of: social | healthcare | edtech | b2b | email | other
+       client:      "Client Name"
+       section:     "What type of work (e.g. Facebook Ads)"
+       employer:    "Where you did this work"
+       desc:        "A sentence or two describing the creative and its results."
+
+  3. Save index.html. That's it.
+
+  ADDING A SCREENSHOT OF A WEBPAGE
+  ──────────────────────────────────
+  Take a full-page screenshot (use browser extension "GoFullPage" — free).
+  Save it to assets/ with a clean filename.
+  Follow the same steps as above.
+
+  REMOVING A CREATIVE
+  ────────────────────
+  In the GALLERY DATA section, delete the entire { … }, block
+  for the item you want to remove.
+
+  DEPLOYING UPDATES TO YOUR LIVE LINK
+  ─────────────────────────────────────
+  If hosted on Netlify Drop:
+    → Go to your site dashboard on netlify.com
+    → Drag the entire  portfolio/  FOLDER (not just the HTML) onto the deploy box.
+  If hosted on GitHub Pages:
+    → Commit and push both index.html and the assets/ folder.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-->
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0A0C10;--ink2:#12151C;--card:#181C26;--card2:#1F2330;
+  --gold:#C8912F;--gold-lt:#E2B96A;--cream:#F2EDE6;--cream2:#C5BEB5;
+  --muted:#706A62;--border:#252938;--border2:#2F3447;
+  --green:#3DAA72;--blue:#4A8FD4;--r:8px;--r2:14px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:-0.01em}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:var(--gold-lt)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,12,16,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--cream)}
+.nav-brand span{color:var(--gold)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:var(--cream2);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--ink);padding:8px 20px;border-radius:4px;font-size:13px;font-weight:500;letter-spacing:0.04em;transition:background 0.2s}
+.nav-cta:hover{background:var(--gold-lt)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:110px 80px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(200,145,47,0.07),transparent 70%);pointer-events:none}
+.hero-label{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.hero-label::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
+.hero h1{font-size:clamp(48px,6vw,86px);line-height:1.0;color:var(--cream);margin-bottom:12px;max-width:900px}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero-sub{font-size:clamp(15px,1.8vw,19px);color:var(--cream2);max-width:600px;margin:24px 0 44px;line-height:1.7;font-weight:300}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:56px}
+.tag{border:1px solid var(--border2);color:var(--cream2);font-size:12px;padding:6px 14px;border-radius:20px;letter-spacing:0.04em}
+.metrics-bar{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--border);border-left:1px solid var(--border)}
+.metric-item{padding:28px 20px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.metric-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:var(--gold);line-height:1}
+.metric-label{font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:0.04em;text-transform:uppercase}
+.metric-sub{font-size:10px;color:var(--muted);margin-top:3px;opacity:0.7}
+
+/* LAYOUT */
+section{padding:90px 80px}
+.section-label{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+.section-title{font-size:clamp(30px,4vw,50px);color:var(--cream);margin-bottom:8px}
+.section-desc{color:var(--cream2);max-width:560px;margin-bottom:48px;font-size:16px;font-weight:300;line-height:1.7}
+.divider{height:1px;background:var(--border);margin:0 80px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.about-text p{color:var(--cream2);margin-bottom:18px;font-size:15px;line-height:1.85;font-weight:300}
+.about-highlight{color:var(--cream);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.5;margin-bottom:28px;display:block;border-left:2px solid var(--gold);padding-left:20px}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border)}
+.skill-cat{background:var(--ink2);padding:18px}
+.skill-cat-name{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.skill-pills{display:flex;flex-wrap:wrap;gap:5px}
+.skill-pill{font-size:11px;color:var(--cream2);background:var(--card);padding:3px 9px;border-radius:3px}
+
+/* TABS */
+.tab-nav{display:flex;border-bottom:1px solid var(--border);margin-bottom:48px;overflow-x:auto}
+.tab-btn{padding:13px 20px;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:'DM Sans',sans-serif}
+.tab-btn:hover{color:var(--cream2)}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* CASE CARDS */
+.case-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--border)}
+.case-card{background:var(--ink2);padding:36px 28px;position:relative;overflow:hidden;transition:background 0.3s}
+.case-card:hover{background:var(--card)}
+.case-number{font-family:'Cormorant Garamond',serif;font-size:72px;color:var(--border2);font-weight:600;line-height:1;position:absolute;top:12px;right:20px;pointer-events:none}
+.case-company{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.case-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);margin-bottom:14px;line-height:1.2}
+.case-desc{font-size:13px;color:var(--cream2);line-height:1.7;margin-bottom:20px}
+.result-item{display:flex;justify-content:space-between;font-size:12px;padding:7px 0;border-bottom:1px solid var(--border)}
+.result-item:last-child{border-bottom:none}
+.result-label{color:var(--muted)}
+.result-val{color:var(--green);font-family:'DM Mono',monospace;font-size:11px}
+
+/* CAMPAIGN */
+.campaign-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.campaign-card{background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden}
+.campaign-header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.campaign-platform{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold)}
+.pdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.campaign-status{font-size:11px;background:rgba(61,170,114,0.12);color:var(--green);padding:3px 10px;border-radius:20px;border:1px solid rgba(61,170,114,0.25)}
+.campaign-body{padding:24px}
+.campaign-name{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--cream);margin-bottom:8px}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.meta-item{background:var(--card2);padding:10px 12px;border-radius:var(--r)}
+.meta-key{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:3px}
+.meta-val{font-size:13px;color:var(--cream);font-weight:500}
+.ad-box{background:var(--card);border:1px solid var(--border2);border-radius:var(--r);padding:16px;margin:16px 0}
+.ad-box-label{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.ad-url{font-size:11px;color:var(--green);margin-bottom:6px;font-family:'DM Mono',monospace}
+.ad-headline{font-size:16px;color:var(--blue);font-weight:500;margin-bottom:6px;line-height:1.3}
+.ad-desc{font-size:12px;color:var(--cream2);line-height:1.65}
+.ad-kw{font-size:11px;color:var(--muted);margin-top:7px;font-style:italic}
+.perf-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:12px}
+.perf-table th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--border);font-weight:400}
+.perf-table td{padding:9px 0;border-bottom:1px solid var(--border);color:var(--cream2)}
+.perf-table td:last-child{color:var(--green);font-family:'DM Mono',monospace;font-size:11px}
+
+/* GTM */
+.gtm-doc{background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden}
+.gtm-doc-header{padding:36px 44px 28px;border-bottom:1px solid var(--border);background:var(--card)}
+.gtm-doc-tag{font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);margin-bottom:10px}
+.gtm-doc-title{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--cream);margin-bottom:6px}
+.gtm-doc-sub{font-size:13px;color:var(--cream2)}
+.gtm-content{padding:36px 44px}
+.gtm-sec{margin-bottom:40px}
+.gtm-sec-title{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--cream);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.gnum{font-size:10px;background:var(--gold);color:var(--ink);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-family:'DM Sans',sans-serif;flex-shrink:0}
+.gtm-p{color:var(--cream2);font-size:13px;line-height:1.8;margin-bottom:12px}
+.gtm-table{width:100%;border-collapse:collapse;font-size:12px;margin:14px 0}
+.gtm-table th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);padding:9px 10px;border-bottom:1px solid var(--border);font-weight:400}
+.gtm-table td{padding:11px 10px;border-bottom:1px solid var(--border);color:var(--cream2);vertical-align:top}
+.gtm-table tr:last-child td{border-bottom:none}
+.gtm-table td:first-child{color:var(--cream);font-weight:500}
+.phase-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--border);margin:14px 0}
+.phase-col{background:var(--card2);padding:18px}
+.phase-month{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:6px}
+.phase-name{font-size:13px;color:var(--cream);font-weight:500;margin-bottom:12px}
+.phase-list{list-style:none;font-size:11px;color:var(--cream2);line-height:1.8}
+.phase-list li::before{content:'→ ';color:var(--gold)}
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin:14px 0}
+.kpi-item{background:var(--card2);padding:14px}
+.kpi-metric{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold)}
+.kpi-label{font-size:10px;color:var(--muted);margin-top:3px}
+
+/* BLOGS */
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.blog-card{background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:border-color 0.2s}
+.blog-card:hover{border-color:var(--border2)}
+.blog-head{padding:24px 24px 0}
+.blog-pub{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold);margin-bottom:8px}
+.blog-title{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--cream);margin-bottom:10px;line-height:1.25}
+.blog-tags-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.btag{font-size:10px;background:var(--card2);color:var(--cream2);padding:3px 8px;border-radius:3px;letter-spacing:0.05em;text-transform:uppercase}
+.blog-excerpt{font-size:12px;color:var(--cream2);line-height:1.75;padding:0 24px 20px}
+.blog-footer{padding:14px 24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted)}
+.blog-link{font-size:11px;color:var(--gold)}
+
+/* GALLERY */
+.gallery-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.filter-btn{padding:7px 16px;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--border2);color:var(--cream2);border-radius:20px;cursor:pointer;background:none;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.filter-btn:hover,.filter-btn.active{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.gallery-item{background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;cursor:pointer;transition:border-color 0.25s,transform 0.25s}
+.gallery-item:hover{border-color:var(--gold);transform:translateY(-2px)}
+.gallery-img{width:100%;height:340px;object-fit:cover;object-position:top;display:block;background:var(--card)}
+.gallery-meta{padding:18px 20px}
+.gallery-sector{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:5px}
+.gallery-client{font-size:15px;color:var(--cream);font-weight:500;margin-bottom:3px}
+.gallery-format{font-size:11px;color:var(--muted)}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:999;align-items:center;justify-content:center;padding:20px}
+.lightbox.open{display:flex}
+.lightbox-inner{position:relative;max-width:880px;width:100%;max-height:92vh;overflow-y:auto;background:var(--ink2);border-radius:var(--r2);border:1px solid var(--border2)}
+.lightbox-img{width:100%;display:block;border-radius:var(--r2) var(--r2) 0 0}
+.lightbox-info{padding:22px 26px}
+.lightbox-close{position:absolute;top:12px;right:14px;font-size:20px;color:var(--cream);cursor:pointer;background:rgba(0,0,0,0.55);border:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:10}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.contact-icon{width:38px;height:38px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
+.contact-key{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:3px}
+.contact-val{color:var(--cream);font-size:14px}
+.cta-block{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:36px}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--cream);margin-bottom:10px;line-height:1.2}
+.cta-sub{color:var(--cream2);font-size:14px;margin-bottom:24px;line-height:1.65}
+.cta-btn{display:inline-block;background:var(--gold);color:var(--ink);padding:12px 28px;border-radius:4px;font-size:13px;font-weight:500;letter-spacing:0.04em;transition:background 0.2s}
+.cta-btn:hover{background:var(--gold-lt)}
+
+footer{padding:36px 80px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-name{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--cream)}
+.footer-copy{font-size:12px;color:var(--muted)}
+
+@media(max-width:860px){
+  nav .nav-links{display:none}
+  .hero{padding:100px 24px 60px}
+  section{padding:60px 24px}
+  .metrics-bar,.case-grid,.campaign-grid,.blog-grid,.gallery-grid,.contact-grid,.phase-grid,.kpi-grid,.about-grid{grid-template-columns:1fr}
+  .divider{margin:0 24px}
+  footer{flex-direction:column;gap:10px;text-align:center;padding:28px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Darshana<span>.</span>Patil</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#creatives">Creatives</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="mailto:darshanaa.at.work@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO — edit your headline, sub-text, tags, and numbers
+     ═══════════════════════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-label">Marketing &amp; Content Portfolio — 8+ Years</div>
+
+  <!-- MAIN HEADLINE: change the text between <h1> tags -->
+  <h1>Strategy that <em>moves</em><br>markets. Copy that<br>converts.</h1>
+
+  <!-- SUBHEADLINE: edit this paragraph -->
+  <p class="hero-sub">Content &amp; Marketing Manager with 8+ years driving growth across global B2B and B2C markets — from paid campaigns and GTM strategy to editorial leadership and high-converting copywriting.</p>
+
+  <!-- ROLE TAGS: add/remove <span class="tag"> items freely -->
+  <div class="hero-tags">
+    <span class="tag">Digital Marketing Manager</span>
+    <span class="tag">Content Marketing Head</span>
+    <span class="tag">GTM Strategist</span>
+    <span class="tag">Paid Media</span>
+    <span class="tag">Growth Marketing</span>
+    <span class="tag">Marketing Director</span>
+  </div>
+
+  <!-- KEY METRICS BAR: edit metric-num and metric-label text -->
+  <div class="metrics-bar">
+    <div class="metric-item">
+      <div class="metric-num">800%</div>
+      <div class="metric-label">LinkedIn Follower Growth</div>
+      <div class="metric-sub">Organic, audience-first</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num">65%</div>
+      <div class="metric-label">Avg Email Open Rate</div>
+      <div class="metric-sub">3× global benchmark</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num">30%</div>
+      <div class="metric-label">Campaign ROI Uplift</div>
+      <div class="metric-sub">Google Ads + Email</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num">500K</div>
+      <div class="metric-label">Website Visitors</div>
+      <div class="metric-sub">In 45 days at ESDS</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num">32+</div>
+      <div class="metric-label">Client Brands</div>
+      <div class="metric-sub">Multi-sector, SRV Media</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT — edit paragraphs and skill pills
+     ═══════════════════════════════════════════ -->
+<section id="about">
+  <div class="section-label">Profile</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2 class="section-title">Where technical depth meets marketing creativity.</h2>
+      <span class="about-highlight">"I don't just write campaigns — I engineer growth systems grounded in data, audience empathy, and brand clarity."</span>
+      <p>Content and Marketing Manager with 8+ years across B2B and B2C markets in India, the USA, and the UAE. My work spans content strategy, GTM planning, paid media, editorial leadership, and full-funnel campaign execution — for clients ranging from global healthcare brands to FinTech startups and AI-first product companies.</p>
+      <p>A Computer Science background and 2 years in software development mean I can collaborate fluently with engineering teams, interpret analytics without a data analyst, and translate complex technical concepts into narratives that actually land with business buyers.</p>
+      <p>I've built marketing teams from scratch, grown LinkedIn audiences by 800%, managed 32+ client accounts simultaneously, and delivered email open rates 3× the global benchmark — across international markets.</p>
+    </div>
+    <div>
+      <!-- SKILLS: add/remove <span class="skill-pill"> items freely -->
+      <div class="skills-grid">
+        <div class="skill-cat">
+          <div class="skill-cat-name">Strategy</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Content Marketing</span>
+            <span class="skill-pill">GTM Planning</span>
+            <span class="skill-pill">Brand Positioning</span>
+            <span class="skill-pill">Audience Segmentation</span>
+            <span class="skill-pill">Product Marketing</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="skill-cat-name">Paid Media</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Google Ads</span>
+            <span class="skill-pill">LinkedIn Ads</span>
+            <span class="skill-pill">Email Automation</span>
+            <span class="skill-pill">HubSpot</span>
+            <span class="skill-pill">Mailchimp</span>
+            <span class="skill-pill">Smartlead</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="skill-cat-name">Analytics</div>
+          <div class="skill-pills">
+            <span class="skill-pill">GA4</span>
+            <span class="skill-pill">Semrush</span>
+            <span class="skill-pill">Ahrefs</span>
+            <span class="skill-pill">Google Search Console</span>
+            <span class="skill-pill">SEOptimer</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="skill-cat-name">Execution</div>
+          <div class="skill-pills">
+            <span class="skill-pill">SEO / AEO / GEO</span>
+            <span class="skill-pill">Copywriting</span>
+            <span class="skill-pill">Editorial Ops</span>
+            <span class="skill-pill">Team Leadership</span>
+            <span class="skill-pill">Agile / Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PORTFOLIO TABS
+     ═══════════════════════════════════════════ -->
+<section id="portfolio">
+  <div class="section-label">Portfolio</div>
+  <h2 class="section-title">Work that drives results.</h2>
+  <p class="section-desc">Case studies, paid campaigns, GTM strategy, editorial, and email marketing — from 8+ years across global markets.</p>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('cases',this)">Case Studies</button>
+    <button class="tab-btn" onclick="showTab('paid',this)">Paid Campaigns</button>
+    <button class="tab-btn" onclick="showTab('gtm',this)">GTM Strategy</button>
+    <button class="tab-btn" onclick="showTab('blogs',this)">Blogs &amp; Editorial</button>
+    <button class="tab-btn" onclick="showTab('email',this)">Email Marketing</button>
+  </div>
+
+  <!-- ── CASE STUDIES ────────────────────────────── -->
+  <div class="tab-panel active" id="tab-cases">
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-number">01</div>
+        <div class="case-company">Dynamisch · Jan 2024 – Feb 2026</div>
+        <div class="case-title">800% LinkedIn Growth &amp; 65% Email Open Rates — International Markets</div>
+        <p class="case-desc">Built end-to-end organic social and email strategy for an AI-first product engineering company targeting USA and UAE enterprise buyers. Zero paid budget on organic; all growth driven by audience-first content calendars and segmented email sequences.</p>
+        <div class="result-item"><span class="result-label">LinkedIn Follower Growth</span><span class="result-val">+800%</span></div>
+        <div class="result-item"><span class="result-label">LinkedIn CAGR</span><span class="result-val">+200%</span></div>
+        <div class="result-item"><span class="result-label">Avg Email Open Rate</span><span class="result-val">65% (vs 20% benchmark)</span></div>
+        <div class="result-item"><span class="result-label">Campaign ROI</span><span class="result-val">+30%</span></div>
+        <div class="result-item"><span class="result-label">Qualified Leads</span><span class="result-val">+15%</span></div>
+        <div class="result-item"><span class="result-label">Brand Reach</span><span class="result-val">+25%</span></div>
+      </div>
+      <div class="case-card">
+        <div class="case-number">02</div>
+        <div class="case-company">ZentrumHub · Aug – Dec 2023</div>
+        <div class="case-title">2× Organic Traffic via SEO &amp; Multi-Channel Distribution</div>
+        <p class="case-desc">Led SEO audits, keyword strategy, and content optimisation for a travel-tech platform. Rebuilt content distribution architecture tracked through GA4 and SEOptimer across all channels.</p>
+        <div class="result-item"><span class="result-label">Organic Web Traffic</span><span class="result-val">2× increase</span></div>
+        <div class="result-item"><span class="result-label">Audience Growth</span><span class="result-val">+20%</span></div>
+        <div class="result-item"><span class="result-label">Project Delivery</span><span class="result-val">+10% improvement</span></div>
+        <div class="result-item"><span class="result-label">Tools</span><span class="result-val">GA4 · SEOptimer · Ahrefs</span></div>
+      </div>
+      <div class="case-card">
+        <div class="case-number">03</div>
+        <div class="case-company">ESDS Software Solutions · 2018–2019</div>
+        <div class="case-title">500,000 Website Visitors in 45 Days &amp; 3× Social Reach</div>
+        <p class="case-desc">Integrated content strategy — blogs, website copy, video scripts, social posts, ads, and case studies — supported by deep competitor analysis that shaped product messaging for a leading Indian cloud and data centre company.</p>
+        <div class="result-item"><span class="result-label">Website Visitors</span><span class="result-val">500,000 in 45 days</span></div>
+        <div class="result-item"><span class="result-label">Social Reach</span><span class="result-val">3× increase</span></div>
+        <div class="result-item"><span class="result-label">Content Types</span><span class="result-val">Blogs · scripts · ads · case studies</span></div>
+      </div>
+    </div>
+    <div style="margin-top:32px;background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);padding:28px">
+      <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold);margin-bottom:14px">Additional Track Record</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+        <div><div style="font-size:13px;color:var(--cream);font-weight:500;margin-bottom:4px">CoBuzz · 2021–2022</div><div style="font-size:12px;color:var(--cream2)">EVP &amp; employer branding for 10+ global brands — Medtronic, Hafele, KhataBook, Viu. 20% engagement uplift.</div></div>
+        <div><div style="font-size:13px;color:var(--cream);font-weight:500;margin-bottom:4px">OnDot Media · 2022–2023</div><div style="font-size:12px;color:var(--cream2)">Directed TalkDev editorial; contributed to TalkMarTech and TalkFinTech launches. AI, SaaS, and cybersecurity journalism.</div></div>
+        <div><div style="font-size:13px;color:var(--cream);font-weight:500;margin-bottom:4px">SRV Media · 2019–2021</div><div style="font-size:12px;color:var(--cream2)">Content strategy &amp; campaigns for 32+ clients — Symbiosis, Cytiva (GE Healthcare), BirlaSoft, Nirma University, Orion IVF.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PAID CAMPAIGNS ─────────────────────────── -->
+  <div class="tab-panel" id="tab-paid">
+    <div style="margin-bottom:16px;font-size:13px;color:var(--muted);font-style:italic">Representative paid campaign frameworks based on real B2B campaigns managed across international markets.</div>
+    <div class="campaign-grid">
+      <div class="campaign-card">
+        <div class="campaign-header">
+          <div class="campaign-platform"><span class="pdot" style="background:#4A8FD4"></span>Google Ads · Search</div>
+          <span class="campaign-status">Completed · Q3 2025</span>
+        </div>
+        <div class="campaign-body">
+          <div class="campaign-name">Enterprise AI Engineering — US Market Lead Gen</div>
+          <p style="font-size:12px;color:var(--cream2);margin-bottom:14px">B2B lead generation targeting enterprise CTOs and VPs of Engineering in the USA for an AI-first product engineering company.</p>
+          <div class="meta-grid">
+            <div class="meta-item"><div class="meta-key">Monthly Budget</div><div class="meta-val">$8,000</div></div>
+            <div class="meta-item"><div class="meta-key">Geo</div><div class="meta-val">USA — Tier 1 Cities</div></div>
+            <div class="meta-item"><div class="meta-key">Type</div><div class="meta-val">Search (RSA)</div></div>
+            <div class="meta-item"><div class="meta-key">Ad Groups</div><div class="meta-val">3 — Enterprise / SMB / AI</div></div>
+          </div>
+          <div class="ad-box">
+            <div class="ad-box-label">Ad Group 1 — Enterprise CTOs</div>
+            <div class="ad-url">dynamisch.co/enterprise-ai</div>
+            <div class="ad-headline">AI-First Engineering Partner | Scale Faster with AI</div>
+            <div class="ad-desc">Build production-ready AI systems with a team that speaks both engineering and business. Trusted by ITC, Vincit &amp; leading global enterprises. Free strategy call.</div>
+            <div class="ad-kw">Keywords: custom AI software development · enterprise product engineering · AI-first software company</div>
+          </div>
+          <table class="perf-table">
+            <thead><tr><th>Metric</th><th>Result</th><th>vs Benchmark</th></tr></thead>
+            <tbody>
+              <tr><td>Click-Through Rate</td><td>4.3%</td><td style="color:var(--green)">+105% vs 2.1%</td></tr>
+              <tr><td>Conversion Rate</td><td>6.2%</td><td style="color:var(--green)">+63% vs 3.8%</td></tr>
+              <tr><td>Cost Per Lead</td><td>$31.62</td><td style="color:var(--green)">42% below $55 avg</td></tr>
+              <tr><td>Campaign ROI</td><td>+30%</td><td style="color:var(--green)">Exceeded target</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="campaign-card">
+        <div class="campaign-header">
+          <div class="campaign-platform"><span class="pdot" style="background:#2867B2"></span>LinkedIn Ads</div>
+          <span class="campaign-status">Completed · 2021–2022</span>
+        </div>
+        <div class="campaign-body">
+          <div class="campaign-name">Employer Brand Campaign — IT &amp; Healthcare Professionals</div>
+          <p style="font-size:12px;color:var(--cream2);margin-bottom:14px">EVP campaign for a Fortune-500 healthcare client to drive talent attraction among skilled IT/MedTech professionals in India's metro cities.</p>
+          <div class="meta-grid">
+            <div class="meta-item"><div class="meta-key">Type</div><div class="meta-val">Sponsored Content + InMail</div></div>
+            <div class="meta-item"><div class="meta-key">Formats</div><div class="meta-val">Single Image + Carousel</div></div>
+            <div class="meta-item"><div class="meta-key">Audience</div><div class="meta-val">IT/MedTech · 3–8 yrs · Metros</div></div>
+            <div class="meta-item"><div class="meta-key">Brands</div><div class="meta-val">Medtronic · Hafele · KhataBook</div></div>
+          </div>
+          <div class="ad-box">
+            <div class="ad-box-label">Sponsored Content — Medtronic Employer Brand</div>
+            <div class="ad-headline" style="font-size:14px">The best engineers don't just write code. They change lives.</div>
+            <div class="ad-desc" style="margin-top:8px">At Medtronic, your work goes beyond sprints and standups. You're building technology that monitors hearts, restores movement, and keeps people alive. If you want your engineering to mean something — we're hiring.</div>
+          </div>
+          <table class="perf-table">
+            <thead><tr><th>Metric</th><th>Result</th><th>vs Benchmark</th></tr></thead>
+            <tbody>
+              <tr><td>CTR (Sponsored)</td><td>3.8%</td><td style="color:var(--green)">8.6× vs 0.44%</td></tr>
+              <tr><td>InMail Open Rate</td><td>58%</td><td style="color:var(--green)">Above avg 30–50%</td></tr>
+              <tr><td>Application Rate</td><td>+20%</td><td style="color:var(--green)">vs prior quarter</td></tr>
+              <tr><td>Employer Visibility</td><td>+20%</td><td style="color:var(--green)">Per HR stakeholders</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:24px;background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden">
+      <div style="padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+        <div class="campaign-platform"><span class="pdot" style="background:var(--gold)"></span>Email — Smartlead / Mailchimp</div>
+        <span class="campaign-status">Ongoing · USA &amp; UAE</span>
+      </div>
+      <div style="padding:24px">
+        <div class="campaign-name">B2B Cold Outreach + Nurture — International Markets</div>
+        <p style="font-size:12px;color:var(--cream2);margin:10px 0 18px">Multi-step sequences achieving 65% average open rates (3× the global B2B benchmark) via precise segmentation, strong subject lines, and value-first messaging.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--border)">
+          <div style="background:var(--card2);padding:18px"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:8px">Email 1 — Cold Outreach</div><div style="font-size:13px;color:var(--cream);margin-bottom:4px">Subject: "Your AI roadmap in 30 minutes (no pitch)"</div><div style="font-size:12px;color:var(--cream2);line-height:1.7">Hi [First Name],<br><br>I noticed [Company] is expanding its engineering team — which usually means there's a product milestone in the pipeline.<br><br>We work with CTOs to build AI-native products faster. Not a staffing agency — an engineering partner who owns outcomes.<br><br>Worth a quick call this week?</div></div>
+          <div style="background:var(--card2);padding:18px"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:8px">Email 2 — Value Follow-Up</div><div style="font-size:13px;color:var(--cream);margin-bottom:4px">Subject: "How [Similar Co] cut their dev cycle by 40%"</div><div style="font-size:12px;color:var(--cream2);line-height:1.7">Hi [First Name],<br><br>Following up with something useful — not a follow-up for the sake of it.<br><br>[Client] came to us with a 14-month roadmap and a 6-month window. We restructured their architecture and shipped in 8 months.<br><br>Happy to share the full case study if relevant.</div></div>
+          <div style="background:var(--card2);padding:18px"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:8px">Email 3 — Soft Close</div><div style="font-size:13px;color:var(--cream);margin-bottom:4px">Subject: "Closing the loop, [First Name]"</div><div style="font-size:12px;color:var(--cream2);line-height:1.7">Hi [First Name],<br><br>I know timing isn't always right, so I'll keep this short.<br><br>If AI-accelerated product development is on your radar for H2 — even in early consideration — I'd love to be on your shortlist.<br><br>No pressure. Just leaving the door open.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;margin-top:16px">
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;flex:1;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold)">65%</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px">Avg Open Rate</div></div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;flex:1;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold)">3×</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px">Global Benchmark</div></div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;flex:1;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold)">+15%</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px">Qualified Leads</div></div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;flex:1;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold)">+30%</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px">Campaign ROI</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GTM STRATEGY ───────────────────────────── -->
+  <div class="tab-panel" id="tab-gtm">
+    <div style="margin-bottom:16px;font-size:13px;color:var(--muted);font-style:italic">90-day GTM strategy framework based on Dynamisch's Global Capability Center (GCC) services launch — a real product vertical I positioned and marketed.</div>
+    <div class="gtm-doc">
+      <div class="gtm-doc-header">
+        <div class="gtm-doc-tag">GTM Content Strategy · Sample Framework</div>
+        <div class="gtm-doc-title">90-Day GTM: Global Capability Center (GCC) Services Launch</div>
+        <div class="gtm-doc-sub">AI-first B2B Product Engineering · Target: Mid-market US Technology Companies · Author: Darshana Patil</div>
+      </div>
+      <div class="gtm-content">
+        <div class="gtm-sec">
+          <div class="gtm-sec-title"><div class="gnum">1</div>Objective &amp; KPIs</div>
+          <p class="gtm-p">Generate 150+ MQLs/month by Day 90, establish thought leadership in the GCC space, and create a self-sustaining content engine targeting US technology companies ($50M–$500M ARR) seeking to set up engineering centres in India.</p>
+          <p class="gtm-p"><strong style="color:var(--cream)">Primary KPI:</strong> 150 MQLs/month by Day 90 &nbsp;·&nbsp; <strong style="color:var(--cream)">Secondary:</strong> 40% organic traffic growth · 60%+ email open rate · 5 enterprise conversations/month</p>
+        </div>
+        <div class="gtm-sec">
+          <div class="gtm-sec-title"><div class="gnum">2</div>Personas &amp; ICP</div>
+          <table class="gtm-table">
+            <thead><tr><th>Persona</th><th>Title</th><th>Pain Point</th><th>Content Hook</th></tr></thead>
+            <tbody>
+              <tr><td>The Scaling CTO</td><td>CTO / VP Engineering</td><td>Talent shortage; US engineering cost; speed to market</td><td>"How top US tech companies build elite engineering teams for 60% less"</td></tr>
+              <tr><td>The Strategic COO</td><td>COO / Chief of Staff</td><td>Operational efficiency, vendor risk, compliance</td><td>"GCC vs Outsourcing: the governance gap no one talks about"</td></tr>
+              <tr><td>The Growth CFO</td><td>CFO / VP Finance</td><td>R&amp;D cost optimisation without quality compromise</td><td>"The real ROI of a GCC: year 1 vs year 3"</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="gtm-sec">
+          <div class="gtm-sec-title"><div class="gnum">3</div>90-Day Execution Plan</div>
+          <div class="phase-grid">
+            <div class="phase-col">
+              <div class="phase-month">Month 1 · Days 1–30</div>
+              <div class="phase-name">Foundation &amp; Awareness</div>
+              <ul class="phase-list">
+                <li>SEO-optimised GCC landing page</li>
+                <li>Pillar blog: "Why 200+ US Companies Set Up GCCs in India in 2025"</li>
+                <li>CEO LinkedIn thought leadership — 3× posts/week</li>
+                <li>3-email cold outreach to 500 ICP contacts</li>
+                <li>Competitor content gap analysis (Semrush + Ahrefs)</li>
+                <li>GCC ROI calculator lead magnet</li>
+              </ul>
+            </div>
+            <div class="phase-col">
+              <div class="phase-month">Month 2 · Days 31–60</div>
+              <div class="phase-name">Amplification</div>
+              <ul class="phase-list">
+                <li>LinkedIn Sponsored Content ($3K, CTO audience)</li>
+                <li>Google Ads — high-intent GCC keywords</li>
+                <li>Webinar: "GCC vs Outsourcing — Making the Right Decision"</li>
+                <li>PR pitch to TechCrunch, Forbes Tech, Business Insider</li>
+                <li>2 detailed case studies with ROI data</li>
+                <li>Email nurture sequence for webinar registrants</li>
+              </ul>
+            </div>
+            <div class="phase-col">
+              <div class="phase-month">Month 3 · Days 61–90</div>
+              <div class="phase-name">Conversion &amp; Scale</div>
+              <ul class="phase-list">
+                <li>Retargeting (LinkedIn + Google Display)</li>
+                <li>ABM outreach — top 50 enterprise target accounts</li>
+                <li>Executive interview series</li>
+                <li>Partnership content with US tech consulting firms</li>
+                <li>Monthly performance review deck for leadership</li>
+                <li>Content calendar for Month 4+ handover</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="gtm-sec">
+          <div class="gtm-sec-title"><div class="gnum">4</div>Channel Mix &amp; Budget</div>
+          <table class="gtm-table">
+            <thead><tr><th>Channel</th><th>Objective</th><th>Budget</th><th>Expected Output</th></tr></thead>
+            <tbody>
+              <tr><td>Organic (SEO + LinkedIn)</td><td>Long-term authority</td><td>—</td><td>40% traffic growth, 500+ followers</td></tr>
+              <tr><td>Google Ads (Search)</td><td>High-intent lead capture</td><td>$12,000</td><td>300+ clicks/mo, CPL &lt;$50</td></tr>
+              <tr><td>LinkedIn Ads</td><td>ICP awareness + retargeting</td><td>$6,000</td><td>CTR &gt;0.8%, 150+ MQLs</td></tr>
+              <tr><td>Email (Cold + Nurture)</td><td>Pipeline development</td><td>—</td><td>60%+ open rate, 15%+ reply rate</td></tr>
+              <tr><td>Webinar + PR</td><td>Thought leadership</td><td>$2,000</td><td>200+ registrations, 2 media placements</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="gtm-sec">
+          <div class="gtm-sec-title"><div class="gnum">5</div>Day 90 Targets</div>
+          <div class="kpi-grid">
+            <div class="kpi-item"><div class="kpi-metric">150+</div><div class="kpi-label">MQLs per month</div></div>
+            <div class="kpi-item"><div class="kpi-metric">40%</div><div class="kpi-label">Organic traffic growth</div></div>
+            <div class="kpi-item"><div class="kpi-metric">60%+</div><div class="kpi-label">Email open rate</div></div>
+            <div class="kpi-item"><div class="kpi-metric">5+</div><div class="kpi-label">Enterprise conversations/mo</div></div>
+            <div class="kpi-item"><div class="kpi-metric">500+</div><div class="kpi-label">New LinkedIn followers</div></div>
+            <div class="kpi-item"><div class="kpi-metric">200+</div><div class="kpi-label">Webinar registrations</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BLOGS ──────────────────────────────────── -->
+  <div class="tab-panel" id="tab-blogs">
+    <!-- TO ADD A NEW BLOG: copy one .blog-card block and edit the text and href link -->
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-head">
+          <div class="blog-pub">ESDS Software Solutions · 2019</div>
+          <div class="blog-title">Have You Chosen the Right Cloud Service for Migration?</div>
+          <div class="blog-tags-row"><span class="btag">Cloud Computing</span><span class="btag">Migration</span><span class="btag">IT Strategy</span></div>
+        </div>
+        <p class="blog-excerpt">A deep-dive into why legacy-to-cloud migration fails, the key challenges enterprises face, and a practical evaluation framework. Contributed to 500,000 visitors in 45 days at ESDS.</p>
+        <div class="blog-footer"><span>esds.co.in/blog</span><a class="blog-link" href="https://www.esds.co.in/blog/what-to-think-before-migrating-legacy-system-to-the-cloud/" target="_blank">Read Article →</a></div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-head">
+          <div class="blog-pub">TalkDev · OnDot Media · 2022</div>
+          <div class="blog-title">Neural and Quantum Computing in Developing Conscious AI Systems</div>
+          <div class="blog-tags-row"><span class="btag">AI</span><span class="btag">Quantum Computing</span><span class="btag">Deep Tech</span></div>
+        </div>
+        <p class="blog-excerpt">Featured editorial on the convergence of neural computing and quantum processing in pursuit of AGI — bridging academic research with implications for senior engineering teams.</p>
+        <div class="blog-footer"><span>talkdev.com</span><a class="blog-link" href="https://talkdev.com/featured/role-of-neural-and-quantum-computing-in-developing-conscious-ai-systems/" target="_blank">Read Article →</a></div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-head">
+          <div class="blog-pub">OnDot Media · 2022</div>
+          <div class="blog-title">Cookies Are Not a Favourite Anymore: Impact of the Cookieless Future</div>
+          <div class="blog-tags-row"><span class="btag">B2B Marketing</span><span class="btag">Data Privacy</span><span class="btag">MarTech</span></div>
+        </div>
+        <p class="blog-excerpt">Examines the shift triggered by third-party cookie deprecation — implications for B2B attribution, first-party data strategy, and contextual advertising. Actionable recommendations for CMOs.</p>
+        <div class="blog-footer"><span>ondot.com/b2b-marketing</span><a class="blog-link" href="https://ondot.com/b2b-marketing/cookies-are-not-a-favorite-anymore-impact-of-cookie-less-future-on-marketing/" target="_blank">Read Article →</a></div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-head">
+          <div class="blog-pub">OnDot Media · 2022</div>
+          <div class="blog-title">B2B Account Intelligence to Increase Cross-Selling and Up-Selling</div>
+          <div class="blog-tags-row"><span class="btag">B2B Marketing</span><span class="btag">Revenue Growth</span><span class="btag">Sales Alignment</span></div>
+        </div>
+        <p class="blog-excerpt">How B2B organisations use account intelligence to identify whitespace within existing accounts — covering intent data, firmographic signals, and cross-sell playbooks at scale.</p>
+        <div class="blog-footer"><span>ondot.com/b2b-marketing</span><a class="blog-link" href="https://ondot.com/incorporating-b2b-account-intelligence-to-increase-cross-selling-and-up-selling-opportunities/" target="_blank">Read Article →</a></div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-head">
+          <div class="blog-pub">ESDS Software Solutions · 2019</div>
+          <div class="blog-title">Jio's Datagiri: How Reliance Jio's Offbeat DX Strategy Stormed Indian Telecom</div>
+          <div class="blog-tags-row"><span class="btag">Digital Transformation</span><span class="btag">Telecom</span><span class="btag">Strategy</span></div>
+        </div>
+        <p class="blog-excerpt">Analytical piece on how pricing disruption and data democratisation reshaped Indian telecom. One of the top-performing articles on ESDS's blog by traffic.</p>
+        <div class="blog-footer"><span>esds.co.in/blog</span><a class="blog-link" href="https://www.esds.co.in/blog/jios-datagiri-how-reliance-jios-offbeat-dx-strategy-stormed-the-indian-telecom-industry/" target="_blank">Read Article →</a></div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-head">
+          <div class="blog-pub">TalkDev · OnDot Media · 2022</div>
+          <div class="blog-title">Full-Stack Engineering: Is It Worth It?</div>
+          <div class="blog-tags-row"><span class="btag">Software Engineering</span><span class="btag">Full-Stack</span><span class="btag">Dev Audience</span></div>
+        </div>
+        <p class="blog-excerpt">A balanced take on the full-stack developer debate — real cost-benefit tradeoffs, market demand dynamics, and what engineering leaders want. Written for a senior developer audience.</p>
+        <div class="blog-footer"><span>talkdev.com</span><a class="blog-link" href="https://talkdev.com/featured/full-stack-engineering-is-it-worth-it/" target="_blank">Read Article →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EMAIL ──────────────────────────────────── -->
+  <div class="tab-panel" id="tab-email">
+    <div style="background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden">
+      <div style="padding:20px 24px;border-bottom:1px solid var(--border);background:var(--card)">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold);margin-bottom:6px">Campaign · B2B Inbound Nurture</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--cream)">AI Product Engineering — Inbound Lead Nurture Sequence</div>
+        <div style="font-size:12px;color:var(--cream2);margin-top:4px">Platform: HubSpot + Mailchimp · Segments: CTO, VP Eng, COO · Markets: USA &amp; UAE</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--border)">
+        <div style="background:var(--ink2);padding:24px"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:8px">Email 1 · Day 0 — Welcome</div><div style="font-size:14px;color:var(--cream);font-weight:500;margin-bottom:4px">Subject: "You just took the most important step"</div><div style="font-size:11px;color:var(--muted);margin-bottom:12px;font-style:italic">Preview: Here's exactly what happens next...</div><div style="font-size:12px;color:var(--cream2);line-height:1.8">Hi [Name],<br><br>Thanks for reaching out. Most companies that contact us are at one of three crossroads: they've outgrown their current tech partner, they're trying to ship faster without burning out their team, or they're exploring AI but don't know where to start.<br><br>Wherever you are — we've been there with companies like yours.<br><br>— The Dynamisch Team</div></div>
+        <div style="background:var(--ink2);padding:24px"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:8px">Email 2 · Day 3 — Education</div><div style="font-size:14px;color:var(--cream);font-weight:500;margin-bottom:4px">Subject: "The AI implementation mistake most CTOs make"</div><div style="font-size:11px;color:var(--muted);margin-bottom:12px;font-style:italic">Preview: It's not the model. It's the data layer...</div><div style="font-size:12px;color:var(--cream2);line-height:1.8">Hi [Name],<br><br>We see it constantly: a company invests in an AI tool, sees mediocre results, and concludes "AI doesn't work for us."<br><br>What went wrong? They built on weak data foundations.<br><br>AI is only as good as the infrastructure underneath it. Before picking a model, you need clean pipelines, the right warehouse architecture, and clear business questions.</div></div>
+        <div style="background:var(--ink2);padding:24px"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:8px">Email 3 · Day 7 — Social Proof</div><div style="font-size:14px;color:var(--cream);font-weight:500;margin-bottom:4px">Subject: "From 14-month roadmap to 8-month delivery"</div><div style="font-size:11px;color:var(--muted);margin-bottom:12px;font-style:italic">Preview: How we helped a HealthTech hit their launch window...</div><div style="font-size:12px;color:var(--cream2);line-height:1.8">Hi [Name],<br><br>A US-based HealthTech company came to us in early 2024. They had a 14-month product roadmap, a 6-month window to launch, and an engineering team stretched thin.<br><br>We restructured their architecture, embedded AI-driven automation, and delivered in 8 months — fully QA'd and production-ready.<br><br>Full case study: [Link] · Book a call: [Calendly]</div></div>
+      </div>
+      <div style="padding:20px 24px;border-top:1px solid var(--border);display:flex;gap:14px">
+        <div style="background:var(--card2);border-radius:var(--r);padding:14px;flex:1;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold)">65%</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px">Avg Open Rate</div><div style="font-size:10px;color:var(--green);margin-top:2px">vs 20% benchmark</div></div>
+        <div style="background:var(--card2);border-radius:var(--r);padding:14px;flex:1;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold)">3×</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px">Global Benchmark</div><div style="font-size:10px;color:var(--green);margin-top:2px">Consistently exceeded</div></div>
+        <div style="background:var(--card2);border-radius:var(--r);padding:14px;flex:1;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold)">+15%</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px">Qualified Leads</div><div style="font-size:10px;color:var(--green);margin-top:2px">Via email campaigns</div></div>
+        <div style="background:var(--card2);border-radius:var(--r);padding:14px;flex:1;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold)">+30%</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px">Campaign ROI</div><div style="font-size:10px;color:var(--green);margin-top:2px">Email + Paid combined</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CREATIVES GALLERY
+     ═══════════════════════════════════════════════════════════
+     TO ADD A CREATIVE: add a new object to the GALLERY_ITEMS
+     array in the <script> section at the bottom of this file.
+     ═══════════════════════════════════════════════════════════ -->
+<section id="creatives">
+  <div class="section-label">Creative Work</div>
+  <h2 class="section-title">Actual creatives. Real clients. Real results.</h2>
+  <p class="section-desc">A visual selection from 32+ client campaigns across Education, Healthcare, FinTech, IT, and Employer Branding — click any card to enlarge.</p>
+
+  <div class="gallery-filters">
+    <button class="filter-btn active" onclick="filterGallery('all',this)">All Work</button>
+    <button class="filter-btn" onclick="filterGallery('social',this)">Social Media</button>
+    <button class="filter-btn" onclick="filterGallery('healthcare',this)">Healthcare</button>
+    <button class="filter-btn" onclick="filterGallery('edtech',this)">EdTech</button>
+    <button class="filter-btn" onclick="filterGallery('b2b',this)">B2B / Life Sciences</button>
+    <button class="filter-btn" onclick="filterGallery('email',this)">Email Mailers</button>
+  </div>
+
+  <!-- Cards are rendered here by JavaScript from GALLERY_ITEMS below -->
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <div class="lightbox-info">
+      <div id="lightboxSector" style="font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold);margin-bottom:6px"></div>
+      <div id="lightboxClient" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);margin-bottom:8px"></div>
+      <div id="lightboxDesc" style="font-size:13px;color:var(--cream2);line-height:1.8"></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Let's Connect</div>
+  <div class="contact-grid">
+    <div>
+      <h2 class="section-title">Ready to build something remarkable?</h2>
+      <p style="color:var(--cream2);font-size:15px;margin:18px 0 36px;line-height:1.8;font-weight:300">Open to senior marketing roles — Digital Marketing Manager, Content Marketing Head, GTM Lead, Paid Media Head, or Marketing Director — where I can bring strategy, craft, and data together to drive real growth.</p>
+      <div class="contact-item"><div class="contact-icon">@</div><div><div class="contact-key">Email</div><a class="contact-val" href="mailto:darshanaa.at.work@gmail.com">darshanaa.at.work@gmail.com</a></div></div>
+      <div class="contact-item"><div class="contact-icon">in</div><div><div class="contact-key">LinkedIn</div><a class="contact-val" href="https://linkedin.com/in/darshanaa156" target="_blank">linkedin.com/in/darshanaa156</a></div></div>
+      <div class="contact-item"><div class="contact-icon">☎</div><div><div class="contact-key">Phone</div><div class="contact-val">+91-8308226598</div></div></div>
+      <div class="contact-item"><div class="contact-icon">◎</div><div><div class="contact-key">Location</div><div class="contact-val">Pune, Maharashtra, India</div></div></div>
+    </div>
+    <div class="cta-block">
+      <div class="cta-title">8+ years. 32+ brands. Measurable results — every time.</div>
+      <p class="cta-sub">From building marketing teams from scratch to delivering 800% follower growth, 65% email open rates, and 30% ROI improvements — a rare combination of strategic thinking, technical depth, and hands-on execution.</p>
+      <a href="mailto:darshanaa.at.work@gmail.com" class="cta-btn">Get in Touch →</a>
+      <div style="margin-top:16px;font-size:11px;color:var(--muted)">Open to full-time, contract, and fractional engagements</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Darshana Patil — Marketing &amp; Content Portfolio</div>
+  <div class="footer-copy">MSc Computer Science · Pune University · 8+ years in Marketing</div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+//  GALLERY DATA — EDIT THIS SECTION TO ADD/REMOVE CREATIVES
+// ═══════════════════════════════════════════════════════════
+//
+//  Each item needs:
+//    src      → "assets/your-filename.jpg"   (image in the assets/ folder)
+//    cat      → filter category: "social" | "healthcare" | "edtech" | "b2b" | "email" | "other"
+//    sector   → short label shown on the card (e.g. "Facebook & Instagram Ads")
+//    client   → client or brand name shown on the card
+//    employer → where / when you did this work
+//    desc     → longer description shown in the lightbox popup
+//
+//  TO ADD: copy one block, paste it at the end (before the closing ]);
+//  TO REMOVE: delete the whole { ... }, block for that item.
+//  TO REORDER: cut and paste the blocks into the order you want.
+//
+const GALLERY_ITEMS = [
+  {
+    src:      "assets/ads-orion-ivf.jpg",
+    cat:      "healthcare",
+    sector:   "Facebook & Instagram Ads",
+    client:   "Orion IVF Pune",
+    employer: "SRV Media · 2019–2021",
+    desc:     "Four high-emotion, high-intent ads for a leading IVF clinic: 'Say Goodbye Disappointment', 'Your parenthood dream can come true!', 'Restore your hope of motherhood' (Women's Day), and a doctor authority ad — each with a clear CTA. Emotionally sensitive yet conversion-focused."
+  },
+  {
+    src:      "assets/ads-cytiva.jpg",
+    cat:      "b2b",
+    sector:   "LinkedIn & Display Banner Ads",
+    client:   "Cytiva (formerly GE Healthcare)",
+    employer: "SRV Media · 2019–2021",
+    desc:     "Six B2B banner ads for Cytiva's life sciences product portfolio — covering cell culture media, blotting equipment, COVID-19 assay solutions, and chromatography techniques. Precise, credibility-building B2B copy for a scientific audience."
+  },
+  {
+    src:      "assets/social-thinkquotient.jpg",
+    cat:      "social",
+    sector:   "Social Media Copywriting",
+    client:   "ThinkQuotient + Birlasoft",
+    employer: "SRV Media · 2019–2021",
+    desc:     "Conceptual social posts blending coding metaphors with New Year messaging, plus a diversity-in-tech employer branding ad for Birlasoft — demonstrating industry-aware copywriting that connects brand voice with cultural moments."
+  },
+  {
+    src:      "assets/ads-gklass-sit.jpg",
+    cat:      "edtech",
+    sector:   "App Install & Admissions Ads",
+    client:   "GKlass App + SIT Symbiosis",
+    employer: "SRV Media · 2019–2021",
+    desc:     "English and Marathi ad pairs for GKlass, an SSC prep app — 'You don't always get a second chance' — plus SIT admissions ads with engineering-career messaging ('Manufacture a Zero-Friction Career'). Shows bilingual copywriting and performance ad structure."
+  },
+  {
+    src:      "assets/ads-gibs.jpg",
+    cat:      "edtech",
+    sector:   "Social Media & Admissions Campaign",
+    client:   "GIBS Business School",
+    employer: "SRV Media · 2019–2021",
+    desc:     "Four ads covering GIBS's range — faculty development ('Leaders Never Stop Learning'), COVID-era scholarship empathy, placement USPs, and an AI/ML BBA program. Shows ability to shift tone from aspirational to empathetic to logical within one campaign."
+  },
+  {
+    src:      "assets/social-festive.jpg",
+    cat:      "social",
+    sector:   "Social Media · Festive Series",
+    client:   "ThinkQuotient + SIT",
+    employer: "SRV Media · 2019–2021",
+    desc:     "Festive social posts for EdTech and Engineering colleges — Diwali academic excellence, Children's Day with 'wings to fly high', and a Raksha Bandhan post using coding humour ('debugging your mood'). Shows copy adapted to multiple brand voices across occasions."
+  },
+  {
+    src:      "assets/email-sicsr-1.jpg",
+    cat:      "email",
+    sector:   "Full HTML Email Mailer",
+    client:   "SICSR Pune · Symbiosis",
+    employer: "SRV Media · 2019–2021",
+    desc:     "A complete HTML email mailer for SICSR's MBA (IT) and MBA (Digital Transformation) programs — 'Become a Technocrat' hero headline, program comparison, rankings proof, and a multi-CTA structure. End-to-end email execution including copy, structure, and conversion design."
+  },
+  {
+    src:      "assets/email-sicsr-2.jpg",
+    cat:      "email",
+    sector:   "Email Nurture Mailer",
+    client:   "SICSR MBA Digital Transformation",
+    employer: "SRV Media · 2019–2021",
+    desc:     "A second-touch email mailer focused on application conversion for SICSR's MBA (Digital Transformation) — data-backed market context ($3.29T Digital Transformation market), clear highlights/outcomes split, and a direct fee-payment CTA."
+  },
+  // ── ADD NEW ITEMS BELOW THIS LINE ──────────────────────
+  // {
+  //   src:      "assets/your-new-image.jpg",
+  //   cat:      "social",
+  //   sector:   "Instagram Post",
+  //   client:   "Client Name",
+  //   employer: "Company · Year",
+  //   desc:     "Describe what this shows and what the result was."
+  // },
+];
+// ═══════════════════════════════════════════════════════════
+
+// Render gallery cards from GALLERY_ITEMS
+function renderGallery(items) {
+  const grid = document.getElementById('galleryGrid');
+  grid.innerHTML = items.map((item, i) => `
+    <div class="gallery-item" data-cat="${item.cat}" data-index="${i}" onclick="openLightbox(${i})">
+      <img class="gallery-img" src="${item.src}" alt="${item.client}" loading="lazy">
+      <div class="gallery-meta">
+        <div class="gallery-sector">${item.sector}</div>
+        <div class="gallery-client">${item.client}</div>
+        <div class="gallery-format">${item.employer}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const filtered = cat === 'all' ? GALLERY_ITEMS : GALLERY_ITEMS.filter(i => i.cat === cat);
+  renderGallery(filtered);
+  // Re-bind click handlers using data-index pointing to original array
+  document.querySelectorAll('.gallery-item').forEach(el => {
+    const idx = parseInt(el.dataset.index);
+    el.onclick = () => openLightbox(idx);
+  });
+}
+
+function openLightbox(index) {
+  const item = GALLERY_ITEMS[index];
+  document.getElementById('lightboxImg').src = item.src;
+  document.getElementById('lightboxSector').textContent = item.sector;
+  document.getElementById('lightboxClient').textContent = item.client;
+  document.getElementById('lightboxDesc').textContent = item.desc;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeLightboxOutside(e) {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+  document.getElementById('portfolio').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// Init
+renderGallery(GALLERY_ITEMS);
+
+window.addEventListener('load', () => {
+  document.querySelectorAll('.metric-num').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(12px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 300 + i * 100);
+  });
+});
+</script>
+</body>
+</html>
